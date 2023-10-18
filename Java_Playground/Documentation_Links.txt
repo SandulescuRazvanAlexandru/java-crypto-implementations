@@ -1,0 +1,8 @@
+1.
+https://docs.oracle.com/javase/6/docs/technotes/guides/security/crypto/CryptoSpec.html
+
+2. (java 6)
+https://docs.oracle.com/javase/6/docs/technotes/guides/security/StandardNames.html
+
+3. (java 7)
+https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html
