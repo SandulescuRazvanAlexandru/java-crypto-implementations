@@ -368,12 +368,41 @@ public class Main {
     }
 
     public static void main(String[] args) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, IOException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
+        //===BEGINING===//random IV at the begining
+        //encryptCBCbegining("Message.txt", "passwordpassword", "MessageEncrypted.enc", "AES");
+        //decryptCBCbegining("MessageEncrypted.enc", "passwordpassword", "MessageDecrypted.txt", "AES");
 
+        //===END===//random IV at the end
+        //encryptCBCEnd("Message.txt", "passwordpassword", "MessageEncrypted.enc", "AES");
+        //decryptCBCEnd("MessageEncrypted.enc", "passwordpassword", "MessageDecrypted.txt", "AES");
 
         //===known IV===//
         encryptCBCivKnown("Message.txt", "passwordpassword", "MessageEncrypted.enc", "AES");
         decryptCBCivKnown("MessageEncrypted.enc", "passwordpassword", "MessageDecrypted.txt", "AES");
 
+
+        //================
+        //este aceeasi regula la parole:
+            //PASSWORD MUST HAVE A SIZE = BLOCK SIZE
+            //DES - 64 bits - 8 bytes - 8 caractere la parola
+            //AES - 128 bits - 16 bytes - 16 caractere la parola
+            //aparent, din ce am testat eu, la AES ai mereu block de 128 bits,
+            //iar parola poate sa fie de 16, 24, 32 de caractere
+
+        //care e faza cu IV - poate sa fie cunoscut, it is not a secret (doar parola trebuie sa fie secreta)
+        //unde si cum il pozitionez - este pozitia 99% din cazuri la inceput pentru ca the receiver need the IV value in order
+//to decrypt the first block;; daca totusi il pun la final, trebuie sa parcurg tot, sa il iau si apoi sa reincep sa citesc
+//also, aici am generat un IV random, dar e ok pentru ca il scriu la inceputul fisierului, ca atare the receiver il stie
+//so we have 2 options: chestia asta cu scrisul la inceput saaaaau merg pe predefined value pe care the destination knows
+//si nu mai este cazul sa scriu in fisier ca e deja stiut
+
+        //IV sa fie plin de 1 or smth all bits 0 or all bits 1
+        //sau sa stiu sa fac daca imi zice "al n-lea bit de la dreapta la stanga sa fie 1, restul 0 or smth like that
+
+        //cbc nu are patterns spre deosebire de ecb
+
+
+        //String (TREBUIE IV: The main issue in your code was caused by a failure to specify an IV value. You must specify an IV value when doing CBC-mode encryption and use that same value when performing the CBC-mode decryption.)
 
         //encrypt
         String parola = "parola";
