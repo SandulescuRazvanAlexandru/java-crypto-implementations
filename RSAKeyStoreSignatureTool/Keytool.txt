@@ -1,0 +1,22 @@
+
+//generating pair keys
+===important
+keytool.exe -genkey -keyalg RSA -alias ismkey1 -keypass passism1 -storepass passks -keystore ismkeystore.ks -dname "cn=Catalin Boja, ou=ISM, o=IT&C Security Master, c=RO"
+===important
+
+-useless
+keytool.exe -genkey -keyalg RSA -alias ismkey2 -keypass passism2 -storepass passks -keystore ismkeystore.ks -dname "cn=Catalin Boja, ou=ISM, o=IT&C Security Master, c=RO"
+-useless
+
+===important (export one of the public keys - every time we export a certificate, it is always a public key)
+===for the first pair, we will export the public key (we will expprt it in ism...cer)
+keytool.exe -export -alias ismkey1 -file ISMCertificateX509.cer -keystore ismkeystore.ks -storepass passks
+===important 
+
+dir:
+ISMCertificateX509.cer
+ismkeystore.ks
+
+---importing an external public key in our keystore (gen a descarcat ala de pe chrome si vrea sa il puna in keystore-ul nostru)
+keytool -importcert -file ISM_Student.cer -keystore ismkeystore.ks -alias "ISM_Student_Platform"
+passks o sa fie parola daca mi se cere 

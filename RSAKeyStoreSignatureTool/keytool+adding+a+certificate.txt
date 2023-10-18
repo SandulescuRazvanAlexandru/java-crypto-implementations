@@ -1,0 +1,3 @@
+keytool -importcert -file certificate.cer -keystore keystore.jks -storepass passks -alias "Alias"
+
+keytool -importcert -file ism_x509_certificate.cer -keystore ismkeystore.ks -alias "webstudent"
