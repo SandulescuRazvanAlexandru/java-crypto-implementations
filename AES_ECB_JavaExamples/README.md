@@ -1,32 +1,32 @@
-java-crypto-implementations
-ECB Encryption and Decryption with Java
-This repository contains various implementations related to cryptography in Java. In this specific code, we implement Electronic Codebook (ECB) mode for symmetric encryption and decryption using both AES and DES as encryption algorithms.
+# java-crypto-implementations
 
-Implementation Details
-Utility Functions
+## ECB Encryption & Decryption Implementation in Java
 
-getHex(byte[] array): Convert a byte array to its hexadecimal string representation.
-getHexFile(String inputFileName): Reads a file byte-by-byte and prints its hexadecimal representation.
-Encryption
+This Java program demonstrates the encryption and decryption of files using the Electronic Codebook (ECB) mode of operation for block ciphers.
 
-encryptECB(String inputFileName, String password, String encryptedFileName, String algorithm): This function reads an input file, encrypts it using the provided algorithm (AES or DES) in ECB mode and writes the encrypted content to the output file.
-Decryption
+### Key Methods:
 
-decryptECB(String encryptedFileName, String password, String decryptedFileName, String algorithm): Reads an encrypted file, decrypts it using the given algorithm in ECB mode, and writes the decrypted content to an output file.
-Main Execution
+- **`getHex(byte[] array)`**: Convert a byte array to a hexadecimal string.
+- **`getHexFile(String inputFileName)`**: Print the hexadecimal representation of a file.
+- **`encryptECB(String inputFileName, String password, String encryptedFileName, String algorithm)`**: Encrypts a file in ECB mode using the specified algorithm and password.
+- **`decryptECB(String encryptedFileName, String password, String decryptedFileName, String algorithm)`**: Decrypts a file encrypted in ECB mode using the specified algorithm and password.
 
-The main function demonstrates the encryption of a "Message.txt" file using AES in ECB mode and then its decryption.
-Requirements
-The password length should match the block size of the chosen algorithm:
-DES: 8 characters (64 bits)
-AES: 16 characters (128 bits)
-Notes
-Using ECB mode is not recommended for most real-world applications due to its susceptibility to pattern recognition. However, it serves educational purposes in this context.
-The utility functions are handy for debugging and understanding the underlying hexadecimal representations.
-Always ensure that the input file exists before attempting to read from it. The code handles the case where the file doesn't exist and prints a warning.
-Sample Execution
-To encrypt and decrypt a file using this code:
+### Usage:
 
-Create a file named Message.txt with the content you wish to encrypt.
-Run the Main class. This will produce an encrypted file MessageEncrypted.enc and then a decrypted file MessageDecrypted.txt.
-Verify the contents of MessageDecrypted.txt to ensure the encryption and decryption processes were successful.
+The program reads from an input file called `Message.txt`, encrypts it using the AES algorithm (or DES, if chosen) in ECB mode, and then writes the encrypted output to `MessageEncrypted.enc`. Afterwards, it decrypts the encrypted file and writes the decrypted output to `MessageDecrypted.txt`.
+
+### Password Considerations:
+
+Ensure that the password used matches the block size of the chosen encryption algorithm:
+- **DES**: 8 characters (64 bits)
+- **AES**: 16 characters (128 bits). For AES, password lengths of 16, 24, or 32 characters can be used based on AES-128, AES-192, or AES-256 respectively.
+
+### Implementation:
+
+The program uses Java's `javax.crypto` library to handle encryption and decryption tasks. It works with files, reading them in chunks based on the block size of the selected encryption algorithm.
+
+### Important Considerations:
+
+1. ECB mode can reveal patterns in encrypted data, making it less secure for many types of data. This program is intended for educational purposes and may not be suitable for production-level encryption needs.
+2. Always ensure the correct padding is used. While PKCS5Padding is mentioned for DES, it's generally compatible with both DES and AES in Java's crypto library.
+3. The `encrypt` and `decrypt` methods provide basic error handling, printing a message if the input file does not exist. This can be expanded upon based on the application's requirements.
