@@ -50,7 +50,6 @@ public class Main {
             System.out.println("User file directory not found");
         }
 
-        // Part I
         String userBase64Value = "xNmqhL2yII9OE+Oi/lRuRC8m46cuYXf8gtDyYJgFNN8=";
         byte[] userHashValue = Base64.getDecoder().decode(userBase64Value);
         File userFile = findUserFile(userHashValue, userFileDirectory);
