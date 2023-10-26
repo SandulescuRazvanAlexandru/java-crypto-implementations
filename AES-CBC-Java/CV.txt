@@ -1,0 +1,3 @@
+Demonstrative Java suite for CBC-mode AES encryption with varied Initialization Vector placements.
+
+Java AES Implementations: Comprehensive suite of AES encryption modes, covering CBC with varied IV placements, CBC-CTS for padding-free output, and the pattern-revealing ECB.

@@ -1,0 +1,3 @@
+Java program showcasing file encryption/decryption using the simplistic, yet pattern-revealing, ECB mode.
+
+Java AES Implementations: Comprehensive suite of AES encryption modes, covering CBC with varied IV placements, CBC-CTS for padding-free output, and the pattern-revealing ECB.
