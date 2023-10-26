@@ -1,0 +1,1 @@
+Implemented PBKDF2 in Java for secure key derivation, with features like salted hashing, adjustable iterations, and hexadecimal visualization.

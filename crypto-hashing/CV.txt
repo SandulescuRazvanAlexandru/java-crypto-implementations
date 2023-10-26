@@ -1,0 +1,1 @@
+Java utility showcasing cryptographic hashing techniques for strings and files, including Base64 encoding and salted hashing.

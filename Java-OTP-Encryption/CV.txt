@@ -1,0 +1,1 @@
+Developed a Java-based One-Time Pad (OTP) encryption utility for secure file encryption and decryption.

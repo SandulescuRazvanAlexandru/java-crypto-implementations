@@ -1,0 +1,1 @@
+Java implementation of HMAC for file and string authentication and integrity checks.

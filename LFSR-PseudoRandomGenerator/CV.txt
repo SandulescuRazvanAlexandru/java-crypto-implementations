@@ -1,0 +1,1 @@
+Java-based pseudo-random byte generator using LFSR principles and password seeding.

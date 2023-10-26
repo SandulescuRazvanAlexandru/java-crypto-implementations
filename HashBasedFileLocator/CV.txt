@@ -1,0 +1,1 @@
+Java utility for locating files in a directory through SHA-256 hash comparisons.
