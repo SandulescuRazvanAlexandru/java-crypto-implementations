@@ -1,1 +1,5 @@
 Java implementation of HMAC for file and string authentication and integrity checks.
+
+Combining all three: Developed Java utilities for cryptographic operations, including HMAC authentication, LFSR pseudo-random generation, and SHA-256 file locating.
+
+Other project: Other projects, including cryptographic utilities like HMAC authentication, LFSR pseudo-random generation, and SHA-256 file locating, can be found in my GitHub repo.
