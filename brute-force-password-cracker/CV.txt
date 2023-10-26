@@ -1,0 +1,1 @@
+Developed a Java-based brute force password cracker utilizing a top 1 million password list, integrating a unique "ism" prefix and dual-hashing (MD5 followed by SHA1) method, optimized for performance benchmarking.

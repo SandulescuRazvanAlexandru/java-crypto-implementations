@@ -1,0 +1,1 @@
+Implemented the A5 PRNG using LFSRs in Java for cryptographic applications, replicating GSM voice privacy mechanisms; features initialization, XOR operations, shifting, output generation, and clocking determination.

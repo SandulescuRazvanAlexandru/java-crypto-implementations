@@ -1,0 +1,1 @@
+Designed a Java-based File Integrity Verifier using Java Cryptographic Architecture, offering HashMAC computation, flexible operation modes, secure secret key handling, logging, and detailed integrity reports for directory contents.
